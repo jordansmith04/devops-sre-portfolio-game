@@ -1,0 +1,97 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.game {
+  position: relative;
+  overflow: hidden;
+}
+
+.world {
+  position: relative;
+  transition: transform 0.1s linear, background 1s ease;
+}
+
+.score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.popup {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.9);
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  z-index: 20;
+  font-weight: bold;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #228b22;
+}
+
+.player {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-size: auto auto; */
+  /* background-size: auto 10vh auto 10vh; */
+  transition: top 0.05s linear, left 0.05s linear;
+  resize: both;
+  /* background-image: url(/src/assets/blond-guy-sprite1.png); */
+}
+
+.block {
+  position: absolute;
+  background: brown;
+  border: 2px solid #663300;
+}
+
+.coin {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: gold;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+.text-box {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-weight: bold;
+  max-width: 200px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  box-shadow: 30px 10px 0 white, -20px 15px 0 white;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
