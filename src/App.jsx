@@ -1,4 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
+import clouds from './assets/clouds.jpg';
+import terraform from './assets/terraform.jpg';
+import cloudCompute from './assets/cloud_compute.jpg';
+import k8 from './assets/k8.jpg';
+import earth from './assets/earth.png';
+import intro from './assets/intro2.avif';
+import grass from './assets/grass.png';
+import server from './assets/server.png';
+import folder from './assets/folder-icon.svg';
+import sprite from './assets/blond-guy-sprite-detailed.png';
+
 
 const vw = (v) => window.innerWidth * (v / 100);
 const vh = (v) => window.innerHeight * (v / 100);
@@ -96,7 +107,7 @@ const STORYLINE = [
 const LEVELS = [
   {
     title: "Intro",
-    background: "src/assets/clouds.jpg",
+    background: clouds,
     objects: [
       { x: 15, width: 8, height: 10 },
       { x: 45, width: 6, height: 12 },
@@ -110,7 +121,7 @@ const LEVELS = [
   },
   {
     title: "Terraform AWS Infrastructure",
-    background: "src/assets/terraform.jpg",
+    background: terraform,
     objects: [
       { x: 15, width: 8, height: 10 },
       { x: 45, width: 6, height: 12 },
@@ -124,7 +135,7 @@ const LEVELS = [
   },
   {
     title: "CI/CD Pipeline with Docker + GitHub Actions",
-    background: "src/assets/cloud_compute.jpg",
+    background: cloudCompute,
     objects: [
       { x: 25, width: 10, height: 12 },
       { x: 55, width: 10, height: 10 },
@@ -138,7 +149,7 @@ const LEVELS = [
   },
   {
     title: "Kubernetes on AWS (EKS)",
-    background: "src/assets/k8.jpg",
+    background: k8,
     objects: [
       { x: 20, width: 10, height: 12 },
       { x: 60, width: 10, height: 10 },
@@ -152,7 +163,7 @@ const LEVELS = [
   },
   {
     title: "Kubernetes on AWS (EKS)",
-    background: "src/assets/k8.jpg",
+    background: k8,
     objects: [
       { x: 20, width: 10, height: 12 },
       { x: 60, width: 10, height: 10 },
@@ -166,7 +177,7 @@ const LEVELS = [
   },
   {
     title: "Kubernetes on AWS (EKS)",
-    background: "src/assets/k8.jpg",
+    background: k8,
     objects: [
       { x: 20, width: 10, height: 12 },
       { x: 60, width: 10, height: 10 },
@@ -180,7 +191,7 @@ const LEVELS = [
   },
   {
     title: "Kubernetes on AWS (EKS)",
-    background: "src/assets/k8.jpg",
+    background: k8,
     objects: [
       { x: 20, width: 10, height: 12 },
       { x: 60, width: 10, height: 10 },
@@ -194,7 +205,7 @@ const LEVELS = [
   },
   {
     title: "ending",
-    background: "src/assets/earth.png",
+    background: earth,
     objects: [],
     coins: [],
   },
@@ -386,7 +397,7 @@ export default function App() {
         height: "100vh",
         overflow: "hidden",
         position: "relative",
-        background: "url(src/assets/intro2.avif)",
+        background: intro,
       }}
     >
       {/* Start Screen */}
@@ -462,7 +473,7 @@ export default function App() {
                 left: 0,
                 width: "100%",
                 height: "10vh",
-                background: "url('/src/assets/grass.png') repeat-x bottom",
+                background: `url(${grass}) repeat-x bottom`,
                 backgroundSize: "contain",
                 zIndex: 7
               }}
@@ -472,7 +483,7 @@ export default function App() {
             {currentLevel.objects.map((obj, i) => (
               <img
                 key={i}
-                src="/src/assets/server.png"
+                src={server}
                 alt="object"
                 style={{
                   position: "absolute",
@@ -491,7 +502,7 @@ export default function App() {
                 !coin.collected && (
                   <img
                     key={i}
-                    src="/src/assets/folder-icon.svg"
+                    src={folder}
                     alt="coin"
                     style={{
                       position: "absolute",
@@ -507,7 +518,7 @@ export default function App() {
 
             {/* Player */}
             <img
-              src="/src/assets/blond-guy-sprite-detailed.png"
+              src={sprite}
               alt="player"
               style={{
                 position: "absolute",
