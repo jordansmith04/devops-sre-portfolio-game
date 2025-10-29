@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/devops-sre-portfolio-game/",
   build: {
-    outDir: 'build'
+    outDir: 'dist'
   }
 })
